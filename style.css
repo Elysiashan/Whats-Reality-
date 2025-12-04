@@ -7,13 +7,13 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Alexandria', sans-serif;
 }
 
 p {
     color: #000;
     align-self: stretch;
-    text-align: center;
-    font-family: Alexandria;
+    
     font-style: normal;
     font-weight: 400;
     letter-spacing: -0.6px;
@@ -26,7 +26,7 @@ p {
 h1 {
     color: #000;
     text-align: center;
-    font-family: Alexandria;
+    
     font-style: normal;
     font-weight: 900;
     line-height: normal;
@@ -38,7 +38,7 @@ h1 {
 h2 {
     color: #000;
     text-align: center;
-    font-family: Alexandria;
+    
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -49,7 +49,7 @@ h2 {
 
 h3 {
     color: #000;
-    font-family: Alexandria;
+    
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -63,7 +63,7 @@ img {
     height: auto;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1200px) {
     img {
         max-width: 400px;
     }
@@ -106,7 +106,7 @@ div {
 
 .label {
     color: #000;
-    font-family: Alexandria;
+    
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -165,11 +165,20 @@ footer {
 }
 
 .nav ul {
-    display: flex;
-    gap: 1rem;
+    /* mobile default: hide nav list, shown when `.open` is applied */
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .nav a {
@@ -184,12 +193,14 @@ footer {
 }
 
 .nav-toggle {
-    display: none;
+    /* mobile default: visible */
+    display: block;
     font-size: 1.5rem;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    height: 31px;
 }
 
 .nav-toggle .icon {
@@ -201,82 +212,23 @@ footer {
     outline: 2px solid #000;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    .nav ul {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        font-size: 1.1rem;
-        text-align: center;
-        padding: 20px;
-        gap: 0.5rem;
-    }
-
-    .nav ul li {
-        padding: 0.5rem 0;
-    }
-
-    .nav ul.open {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-toggle {
-        display: block;
-        height: 31px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 16px;
-    }
-
-    p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .label {
-        font-size: 11px;
-    }
-
-    .bigbrother,
-    .amazingrace,
-    .survivor,
-    .loveisland,
-    .bachelor,
-    .dayfiance,
-    .housewive,
-    .property,
-    .flip,
-    .bigbrother2,
-    .amazingrace2,
-    .survivor2,
-    .loveisland2,
-    .bachelor2,
-    .dayfiance2,
-    .housewive2,
-    .property2,
-    .flip2 {
-        gap: 1rem;
-    }
+/* show nav when open (used by script) */
+.nav ul.open {
+    display: flex;
 }
 
-/* Desktop media queries */
-@media (min-width: 769px) {
+.nav ul li {
+    padding: 0.5rem 0;
+}
+
+/* small-screen rules were promoted to base (mobile-first). */
+
+/* Consolidated desktop media query */
+@media (min-width: 1200px) {
+    img {
+        max-width: 400px;
+    }
+
     h1 {
         font-size: 96px;
     }
@@ -294,29 +246,28 @@ footer {
         line-height: 26px;
     }
 
-    .bigbrother,
-    .amazingrace,
-    .survivor,
-    .loveisland,
-    .bachelor,
-    .dayfiance,
-    .housewive,
-    .property,
-    .flip {
+    /* make show sections horizontal on wide screens */
+    .show,
+    .show-secondary {
         flex-direction: row;
         gap: 51.86px;
+        align-items: flex-start;
     }
 
-    .bigbrother2,
-    .amazingrace2,
-    .survivor2,
-    .loveisland2,
-    .bachelor2,
-    .dayfiance2,
-    .housewive2,
-    .property2,
-    .flip2 {
+    /* desktop navigation: show list, hide toggle */
+    .nav ul {
+        display: flex;
         flex-direction: row;
-        gap: 51.86px;
+        position: static;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+        gap: 1rem;
+        background: transparent;
+        text-align: left;
+    }
+
+    .nav-toggle {
+        display: none;
     }
 }
