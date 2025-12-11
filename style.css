@@ -9,9 +9,19 @@ body {
     padding: 0;
     font-family: 'Alexandria', sans-serif;
 }
+.mainlogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 127px;
+}
+.textlogo{
+    width: 252px;
+    height: 77px;
+}
 
 p {
-    color: #000;
+    color: #000000;
     align-self: stretch;
 
     font-style: normal;
@@ -24,7 +34,7 @@ p {
 }
 
 h1 {
-    color: #000;
+    color: #000000;
     text-align: center;
 
     font-style: normal;
@@ -36,7 +46,7 @@ h1 {
 }
 
 h2 {
-    color: #000;
+    color: #000000;
     text-align: center;
 
     font-style: normal;
@@ -48,7 +58,7 @@ h2 {
 }
 
 h3 {
-    color: #000;
+    color: #000000;
 
     font-style: normal;
     font-weight: 500;
@@ -78,7 +88,14 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
+.caption{
+    color: #000000;
+font-family: Alexandria;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
 /* div {
 
     max-width: 272px;
@@ -110,15 +127,20 @@ main {
 }
 
 .label {
-    color: #000;
+    color: #000000;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     display: flex;
-    justify-content: center;
     padding: 0;
     max-width: 100%;
+}
+.homephoto{
+    width: 869px;
+height: auto;
+aspect-ratio: 869/389;
+background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 /* background color */
@@ -208,7 +230,7 @@ footer {
 
 .nav a {
     text-decoration: none;
-    color: #333;
+    color: #000000;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -234,7 +256,7 @@ footer {
 }
 
 .nav-toggle:focus {
-    outline: 2px solid #000;
+    outline: 2px solid #000000;
 }
 
 /* show nav when open (used by script) */
@@ -258,7 +280,6 @@ footer {
     #instagram-embed-1,
     #instagram-embed-2 {
         width: 100%;
-        height: auto;
     }
 
 
