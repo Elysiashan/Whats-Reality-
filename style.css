@@ -137,10 +137,9 @@ line-height: normal;
     max-width: 100%;
 }
 .homephoto{
-    width: 869px;
-height: auto;
+width: 100%;
+height: 100%;
 aspect-ratio: 869/389;
-background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 /* background color */
