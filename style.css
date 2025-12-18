@@ -216,12 +216,7 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     list-style: none;
-    margin: 0;
     padding: 20px;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -237,6 +232,10 @@ footer {
 
 .nav a:hover {
     color: #548ACC;
+}
+.body::after {
+  content: url('image-hover.png');
+  display: none;
 }
 
 .nav-toggle {
